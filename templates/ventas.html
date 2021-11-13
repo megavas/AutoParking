@@ -6,48 +6,54 @@
 {% block content %}
     <!-- Container 1 -->
     <div class="container-fluid">
-      
-      <h1 class="text-left mt-5" >Registro de entrada </h1>
-      
-      <form action="/ventas" method="POST" class="row row-cols-lg-auto g-3 align-items-center">
-        <div class="col-12">
-          <label class="visually-hidden" for="inlineFormInputGroupUsername">Placa</label>
-          <div class="input-group">
-            <div class="input-group-text">Placa vehículo</div>
-            <input type="text" class="form-control" id="inlineFormInputGroupUsername" name="placa" placeholder="ABC123">
-          </div>
+      <div class="row justify-content-center mt-5">
+        <div class="col-xl-6 col-xl-auto">
+          <h1>Registro de entrada </h1>
+          <form action="/ventas" method="POST">
+            <div class="row row-cols-lg-3 row-cols-1 justify-content-center">
+              <div class="col">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">Placa</label>
+                <div class="input-group">
+                  <div class="input-group-text">Placa vehículo</div>
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername" name="placa" placeholder="ABC123" tabindex="1">
+                </div>
+            </div>
+            <div class="col">
+              <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+              <select class="form-select" name="Tvehiculo" id="inlineFormSelectPref" tabindex="2">
+                <option selected>Tipo de vehículo...</option>
+                <option value="1">Bicicleta</option>
+                <option value="2">Moto</option>
+                <option value="3">Auto</option>
+              </select>
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-primary" tabindex="3">Registrar</button>
+              </div>
+            </div>
+          </form>
         </div>
-      
-        <div class="col-12">
-          <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-          <select class="form-select" name="Tvehiculo" id="inlineFormSelectPref">
-            <option selected>Tipo de vehículo...</option>
-            <option value="1">Bicicleta</option>
-            <option value="2">Moto</option>
-            <option value="3">Auto</option>
-          </select>
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Registrar</button>
-        </div>
-      </form>
-      <h1 class="text-left mt-5" >Registro de Salida </h1>
+      </div>
 
-      <form action="/ventas" method="GET" class="row row-cols-lg-auto g-3 align-items-center">
-        <div class="col-12">
-          <label class="visually-hidden" for="inlineFormInputGroupUsername">Placa</label>
-          <div class="input-group">
-            <div class="input-group-text">ID</div>
-            <input type="text" class="form-control" id="inlineFormInputGroupUsername" name="out_id" placeholder="100">
-          </div>
+      <div class="row justify-content-center mt-5">
+        <div class="col-xl-6 col-xl-auto">
+          <h1>Registro de Salida </h1>
+          <form action="/ventas" method="GET">
+            <div class="row row-cols-lg-2 row-cols-1 justify-content-center">
+              <div class="col">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">Placa</label>
+                <div class="input-group">
+                  <div class="input-group-text">ID</div>
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername" name="out_id" placeholder="100" tabindex="4">
+                </div>
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal" tabindex="5">Generar factura</button>
+              </div>
+            </div>
+          </form>
         </div>
-      
-      
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">Generar factura</button>
-        </div>
-      </form>
-    </div>
+      </div>
     </div>
 
     <!-- Container 2 -->

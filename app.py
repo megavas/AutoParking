@@ -151,6 +151,7 @@ def ventas():
         #print(plac)
         results = database.session.query(Factura, Vehiculo, TipoVehiculo). \
             select_from(Factura).join(Vehiculo).join(TipoVehiculo).all()
+        print(results)
         return render_template('ventas.html',  results=results, tiempo=time)
     else:
         factura = Factura.get_all()
